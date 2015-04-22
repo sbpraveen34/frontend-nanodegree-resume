@@ -158,18 +158,65 @@ var projects = {
   'projects': [
       {
         'title': 'Remote Administration',
-        'dates': 'Oct 2013 - Nov 2013',
-        'description': 'The aim of this project is to develop an application in Java for remote administration of a node from another node in a network using socket programming. The nodes are controlled by Graphical User Interface. This application involves the use of java libraries like Java Swing, Java.awt.robot,  Java.net. This application is also uses Multithreading to handle mouse events and monitor change.',
-        'images': []
-      }
+        'aim':  'Java application for remote administration of a node from another node in a network using socket programming.',
+        'tools':'Java',
+        'special':'Nodes can be controlled by Graphical User Interface, uses Multithreading to handle mouse events and monitor change.',
+        'dates': 'Oct 2013 - Nov 2013',        
+        'images': [],
+        'location': 'IIT Jodhpur, Rajasthan',
+        'role': 'Java Developer',
+        'story':''
+      },
+      {
+        'title': 'Smart SMS',
+        'aim':  'Android App. which will act as an Automated Expense Manager by keeping track of the transactions made electronically by the user, through SMSes',
+        'tools':'Android, PHP, Python',
+        'special':' Messages are classified in two categories expense or non-expense messages and displayed to the user as demanded., '+
+                    'Generates expense sheet in the form of pdf/excel format and sends it to users email id with all the details of purchase. ',
+        'dates': 'May 2013 - July 2013',        
+        'images': [],
+        'location': 'The Perfect Future India Pvt. Ltd., Noida, New Delhi',
+        'role' : 'Android Developer, RESTful API web service, worked on google APIs, NLP, Algorithm Design',
+        'story':'' 
+      },
+      {
+        'title': 'Smart Dialer',
+        'aim':  'An android application to make possible suggestion for the user to make calls at a particular time.',
+        'tools':'Android',
+        'special':' Naive bayes classifier is used for classification'+
+                    ',Accuracy analysis of algorithm using corpus of call logs which yielded an accuracy of approximately 61%.',
+        'dates': 'May 2013 - July 2013',        
+        'images': [],
+        'location': 'The Perfect Future India Pvt. Ltd., Noida, New Delhi',
+        'role': 'Android Developer, widget development, Research and Algorithm Design',
+        'story': ''
+      },
+      {
+        'title': 'Smart Browser',
+        'aim':  'An Android application which suggests users web pages based on their browsing interests.',
+        'tools':'Android, PHP, Python.',
+        'special':'Suggestions will also be based on the other users who have similar interests.',
+        'dates': 'May 2013 - July 2013',        
+        'images': [],
+        'location': 'The Perfect Future India Pvt. Ltd., Noida, New Delhi',
+        'role': 'Android Developer, Layout development, the RESTful API web service, Research and algorithm design and server workflow.',
+        'story' : ''
+      },      
   ],
-  'display': function (){
+  'display': function (){      
       for(project in this.projects)
       {
-          $('#projects').append(HTMLprojectStart);
+          var projectAim = HTMLprojectAim.replace('%data%',this.projects[project].aim);
+          var projectTools = HTMLprojectLanguage.replace('%data%',this.projects[project].tools);          
+          var projectSpecial = HTMLprojectSpecial.replace('%data%',this.projects[project].special);
+          var projectRole = HTMLprojectRole.replace('%data%',this.projects[project].role);          
+          var projectDescription = HTMLprojectDescription.replace('%data%',projectAim+projectTools+projectSpecial+projectRole);
+          $('#projects').append(HTMLprojectStart);          
           $('.project-entry:last').append(HTMLprojectTitle.replace('%data%',this.projects[project].title));
           $('.project-entry:last').append(HTMLprojectDates.replace('%data%',this.projects[project].dates));
-          $('.project-entry:last').append(HTMLprojectDescription.replace('%data%',this.projects[project].description));
+          $('.project-entry:last').append(HTMLprojectLocation.replace('%data%',this.projects[project].location));
+          $('.project-entry:last').append(projectDescription);
+          $('.project-entry:last').append(HTMLprojectStory.replace('%data%',this.projects[project].story));
           for(image in this.projects[project].images)
           {
               $('.project-entry:last').append(HTMLprojectImage.replace('%data%',this.projects[project].images[image]));
@@ -179,7 +226,7 @@ var projects = {
 };
 $('#main').append(internationalizeButton);
 bio.display();
-education.display();
 work.display();
 projects.display();
+education.display();
 $('#mapDiv').append(googleMap);
