@@ -10,16 +10,16 @@ var bio = {
                 'location': 'Bangalore'
             },
     'welcomeMessage': 'Feel Before you Think, Think Before you Speak, Speak what you do',
-    'skills': ['Innovative', 'Compatability', 'Quick Learning'],
+    'skills': ['Innovative', 'Compatibility', 'Quick Learning'],
     'biopic': 'images/dual.jpg',
     'display': function () {
         $('#header').prepend(HTMLheaderRole.replace('%data%', this.role));
         $('#header').prepend(HTMLheaderName.replace('%data%', this.name));
-        $('#topContacts').append(HTMLmobile.replace('%data%', this.contacts.mobile));
-        $('#topContacts').append(HTMLemail.replace('%data%', this.contacts.email));
-        $('#topContacts').append(HTMLgithub.replace('%data%', this.contacts.github));
-        $('#topContacts').append(HTMLtwitter.replace('%data%', this.contacts.twitter));
-        $('#topContacts').append(HTMLlocation.replace('%data%', this.contacts.location));
+        $('#topContacts, #footerContacts').append(HTMLmobile.replace('%data%', this.contacts.mobile));
+        $('#topContacts, #footerContacts').append(HTMLemail.replace('%data%', this.contacts.email));
+        $('#topContacts, #footerContacts').append(HTMLgithub.replace('%data%', this.contacts.github));
+        $('#topContacts, #footerContacts').append(HTMLtwitter.replace('%data%', this.contacts.twitter));
+        $('#topContacts, #footerContacts').append(HTMLlocation.replace('%data%', this.contacts.location));
         $('#header').append(HTMLbioPic.replace('%data%', this.biopic));
         $('#header').append(HTMLwelcomeMsg.replace('%data%', this.welcomeMessage));
         $("#header").append(HTMLskillsStart);
@@ -157,15 +157,89 @@ var work = {
 var projects = {
   'projects': [
       {
-        'title': 'Remote Administration',
-        'aim':  'Java application for remote administration of a node from another node in a network using socket programming.',
+        'title': 'Magento Facebook Plugin',
+        'aim':  'Develop a Magento plugin to create a facebook pagetab application for an e-commerce website to show case the available products and also to increase user engagement',
+        'tools':'PHP',
+        'special':'Plugin has more social features like custom stories, like & share options with facebook, googleplus, twitter and pinterest.'
+                +' <br>Plugin does not require to import data to outside server as it will act like a third party module with magento',
+        'dates': 'Dec 2014 - till Now',        
+        'images': [],
+        'location': 'Cognizant Technologies Solutions, Bangalore',
+        'role' : 'PHP Developer, Magento Developer',
+        'story':'' ,
+        'type':'[<b>On going Project</b>] Client Project'
+      },      
+      {
+        'title': 'Storelocator',
+        'aim':  'Develop a storelocator module for a magento based e-commerce web application.',
+        'tools':'PHP',
+        'special':'Module makes only a single call to server to get the data which makes displaying result very fast.<br> Module also supports different types of maps like Google & Yandex.',
+        'dates': 'Feb 2015 - March 2015',
+        'images': [],
+        'location': 'Cognizant Technologies Solutions, Bangalore',
+        'role' : 'PHP Developer, Magento Developer',
+        'story':'' ,
+        'type':'Client Project'
+      },
+      {
+        'title': 'Social Media Metrics Crawler',
+        'aim':  'Application deals with data pulling from social media platforms like Facebook, Twitter, Instagram, Tumblr and YouTube',
+        'tools':'PHP',
+        'special':'Data includes information regarding their fans detail in their respective pages in social media platforms. The metrics changes every month with respect to the requirement from the cilent',
+        'dates': 'Sep 2014 - Dec 2014',        
+        'images': [],
+        'location': 'Cognizant Technologies Solutions, Chennai',
+        'role' : 'PHP Developer, Research on facebook metrics & other social media apis',
+        'story':'' ,
+        'type':'Client Project'
+      },
+      {
+        'title': 'Page feeds of Social Media',
+        'aim':  'Application takes the social media (includes Facebook, Twitter and Instagram) page id gives back the news feed of the respective pages.',
+        'tools':'PHP',
+        'special':'Application returns the Likes and Comment count for respective posts and also classifies the post as post made by Users and Page.',
+        'dates': 'Nov 2014 - Nov 2014',        
+        'images': [],
+        'location': 'Cognizant Technologies Solutions, Chennai',
+        'role' : 'PHP Developer',
+        'story':'' ,
+        'type':'Internal Project'
+      },
+      {
+        'title': 'App Insights',
+        'aim':  'Application takes information regarding any IPhone application like app id or search terms and returns information regarding user comments',
+        'tools':'PHP',
+        'special':'Application also does sentiment Analysis and retrieves theme of user comments using Alchemy API to reveal the users opinion regarding the application.',
+        'dates': 'Nov 2014 - Nov 2014',        
+        'images': [],
+        'location': 'Cognizant Technologies Solutions, Chennai',
+        'role' : 'PHP Developer',
+        'story':'' ,
+        'type':'Internal Project'
+      },      
+      {
+        'title': 'Study of Covert information using Steganography and Steganalysis',
+        'aim':  'Studied and implemented various steganography algorithms and steganalysis based on various transformations like DFT, DCT.',
         'tools':'Java',
-        'special':'Nodes can be controlled by Graphical User Interface, uses Multithreading to handle mouse events and monitor change.',
+        'special':'A term paper comprising detailed study on various steganography algorithms and steganalysis based on various transformations like DFT, DCT.',
+        'dates': 'Oct 2013 - April 2014',        
+        'images': [],
+        'location': 'IIT Jodhpur, Rajasthan',
+        'role' : 'Research and Development on networking Topics',
+        'story':'' ,
+        'type':'B.Tech Project'
+      },
+      {
+        'title': 'Computer Networks and Security',
+        'aim':  'To study various methods of performing Denial of Service and Man In The Middle attack on wireless network.',
+        'tools':'C, Python',
+        'special':'A term paper comprising detailed study on various DOS attacks on various levels of OSI network model and Man In the Middle Attacks',
         'dates': 'Oct 2013 - Nov 2013',        
         'images': [],
         'location': 'IIT Jodhpur, Rajasthan',
-        'role': 'Java Developer',
-        'story':''
+        'role' : 'Research and Development on networking Topics',
+        'story':'' ,
+        'type':'Course Project - Advanced Computer Networks'
       },
       {
         'title': 'Smart SMS',
@@ -177,7 +251,8 @@ var projects = {
         'images': [],
         'location': 'The Perfect Future India Pvt. Ltd., Noida, New Delhi',
         'role' : 'Android Developer, RESTful API web service, worked on google APIs, NLP, Algorithm Design',
-        'story':'' 
+        'story':'' ,
+        'type':'Internship Project'
       },
       {
         'title': 'Smart Dialer',
@@ -189,7 +264,8 @@ var projects = {
         'images': [],
         'location': 'The Perfect Future India Pvt. Ltd., Noida, New Delhi',
         'role': 'Android Developer, widget development, Research and Algorithm Design',
-        'story': ''
+        'story': '',
+        'type':'Internship Project'
       },
       {
         'title': 'Smart Browser',
@@ -200,8 +276,94 @@ var projects = {
         'images': [],
         'location': 'The Perfect Future India Pvt. Ltd., Noida, New Delhi',
         'role': 'Android Developer, Layout development, the RESTful API web service, Research and algorithm design and server workflow.',
-        'story' : ''
+        'story' : '',
+        'type':'Internship Project'
+      },
+      {
+        'title': 'Complete Database Management System',
+        'aim':  'Java Application which can act as a complete database management system.',
+        'tools':'Java',
+        'special':'Main components of the project include Disk storage, in particular the data are stored in a pagnited files, a buffer manager which is going to buffer the disk space, an index manager which manages the loaded indices which supports efficient query execution, an execution engine which performs parsing, query optimization and query processing, a meta-data manager which manages the meta-data of the databases and supplies meta data to query engine for optimization and a multithreaded connection manager.',
+        'dates': 'Feb 2013 - April 2013',
+        'images': [],
+        'location': 'IIT Jodhpur, Rajasthan',
+        'role': 'Java Developer',
+        'story':'',
+        'type':'Course Project - Principles of Database Systems'
+      },
+      {
+        'title': 'Resume Storage and Editing Web Application',
+        'aim':  'To develop a web application to store and edit resume given in Excel file format',
+        'tools':'PHP',
+        'special':'Reads resume contents from excel sheet and displays in the content in browser for editing and allows to save the edited version back in excel file.',
+        'dates': 'Feb 2013 - April 2013',        
+        'images': [],
+        'location': 'IIT Jodhpur, Rajasthan',
+        'role': 'PHP Developer',
+        'story':'',
+        'type':'Course Project - Software Engineering'
+      },
+      {
+        'title': 'Cab Booking Service Software',
+        'aim':  'To automate the process of booking cabs from a travel agent',
+        'tools':'Java',
+        'special':'Communication between customer and the service provider is done through socket programming.'+
+                    '<br>Allows the customer to choose their starting and destination point through map to make it more customized.',
+        'dates': 'Feb 2013 - April 2013',        
+        'images': [],
+        'location': 'IIT Jodhpur, Rajasthan',
+        'role': 'Java Developer',
+        'story':'',
+        'type':'Course Project - Software Engineering'
+      },
+      {
+        'title': 'Student Registration and Timetable Allotment',
+        'aim':  'To automate the complete process of student registration and timetable allotment of an Institute.',
+        'tools':'Java',
+        'special':'Implemented graph coloring algorithm to find the total number of distinct slot without any common student in any two same slots.',
+        'dates': 'Feb 2013 - April 2013',        
+        'images': [],
+        'location': 'IIT Jodhpur, Rajasthan',
+        'role': 'Java Developer',
+        'story':'',
+        'type':'Course Project - Software Engineering'
+      },
+      {
+        'title': 'Remote Administration',
+        'aim':  'Java application for remote administration of a node from another node in a network using socket programming.',
+        'tools':'Java',
+        'special':'Nodes can be controlled by Graphical User Interface, uses Multithreading to handle mouse events and monitor change.',
+        'dates': 'Oct 2012 - Nov 2012',        
+        'images': [],
+        'location': 'IIT Jodhpur, Rajasthan',
+        'role': 'Java Developer',
+        'story':'',
+        'type':'Course Project - Computer Networks'
       },      
+      {
+        'title': 'Password Checker Using Bloom Filter Implementation',
+        'aim':  'To develop an application in Java to check whether the entered password is given in the list or not.',
+        'tools':'Java',
+        'special':'Project involved the implementation of BloomFilters',
+        'dates': 'Oct 2012 - Nov 2012',        
+        'images': [],
+        'location': 'IIT Jodhpur, Rajasthan',
+        'role': 'Java Developer',
+        'story':'',
+        'type':'Course Project - Algorithms II'
+      },
+      {
+        'title': 'Words Isomorphism',
+        'aim':  'An application in python for checking whether given two words are isomorphic to each other or not.',
+        'tools':'Python',
+        'special':'Used Libraries like Tkinter and standard python libraries to handle GUI and Inputs.',
+        'dates': 'Feb 2012 - April 2012',        
+        'images': [],
+        'location': 'IIT Jodhpur, Rajasthan',
+        'role': 'Python Developer',
+        'story':'',
+        'type':'Course Project - Discreet Mathematics'
+      },
   ],
   'display': function (){      
       for(project in this.projects)
@@ -210,7 +372,8 @@ var projects = {
           var projectTools = HTMLprojectLanguage.replace('%data%',this.projects[project].tools);          
           var projectSpecial = HTMLprojectSpecial.replace('%data%',this.projects[project].special);
           var projectRole = HTMLprojectRole.replace('%data%',this.projects[project].role);          
-          var projectDescription = HTMLprojectDescription.replace('%data%',projectAim+projectTools+projectSpecial+projectRole);
+          var projectType = HTMLprojectType.replace('%data%',this.projects[project].type);
+          var projectDescription = HTMLprojectDescription.replace('%data%',projectAim+projectTools+projectSpecial+projectRole+projectType);
           $('#projects').append(HTMLprojectStart);          
           $('.project-entry:last').append(HTMLprojectTitle.replace('%data%',this.projects[project].title));
           $('.project-entry:last').append(HTMLprojectDates.replace('%data%',this.projects[project].dates));
@@ -230,3 +393,19 @@ work.display();
 projects.display();
 education.display();
 $('#mapDiv').append(googleMap);
+//
+//var Resume = {
+//    'show': false,
+//    'showHideBlocks' : function(selector){
+//        if(this.show === false)
+//        {
+//            jQuery(selector).show('slow');
+//            this.show = true;
+//        }
+//        else
+//        {
+//            jQuery(selector).slideUp('slow');
+//            this.show = false;
+//        }
+//    }  
+//};

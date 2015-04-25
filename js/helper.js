@@ -27,9 +27,10 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectAim = '<li><label><b>Aim: </b></label>%data%</li>';
-var HTMLprojectSpecial = '<li><label><b>Special Point: </b></label>%data%</li>'
+var HTMLprojectSpecial = '<li><label><b>Special Point: </b></label>%data%</li>';
 var HTMLprojectLanguage = '<li><label><b>Languages: </b></label>%data%</li>';
 var HTMLprojectRole = '<li><label><b>Role: </b></label>%data%</li>';
+var HTMLprojectType = '<li><label><b>Type: </b></label>%data%</li>';
 var HTMLprojectLocation = '<div class="location-text">%data%</div>';
 var HTMLprojectDescription = '<p><br><ul>%data%</ul></p>';
 var HTMLprojectStory = '<p><br></p>';
